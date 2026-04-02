@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мини-конструктор заказа</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Мини-конструктор заказа</h1>
+
+    <div class="app">
+      <form class="order-form" id="orderForm">
+        <h2>Форма заказа</h2>
+
+        <label for="name">Имя клиента</label>
+        <input type="text" id="name" placeholder="Введите имя" />
+
+        <label for="comment">Комментарий</label>
+        <textarea id="comment" placeholder="Напишите комментарий"></textarea>
+
+        <label for="category">Категория товара</label>
+        <select id="category">
+          <option value="Ноутбук" data-price="50000">Ноутбук</option>
+          <option value="Смартфон" data-price="30000">Смартфон</option>
+          <option value="Наушники" data-price="5000">Наушники</option>
+          <option value="Клавиатура" data-price="3000">Клавиатура</option>
+        </select>
+
+        <label for="quantity">Количество</label>
+        <input type="text" id="quantity" value="1" />
+
+        <div class="block">
+          <p class="block-title">Способ доставки</p>
+
+          <label class="inline-label">
+            <input type="radio" name="delivery" value="Курьер" checked />
+            Курьер
+          </label>
+
+          <label class="inline-label">
+            <input type="radio" name="delivery" value="Самовывоз" />
+            Самовывоз
+          </label>
+        </div>
+
+        <div class="block">
+          <p class="block-title">Дополнительные опции</p>
+
+          <label class="inline-label">
+            <input type="checkbox" class="option" value="Гарантия 2 года" data-price="2000" />
+            Гарантия 2 года (+2000)
+          </label>
+
+          <label class="inline-label">
+            <input type="checkbox" class="option" value="Подарочная упаковка" data-price="500" />
+            Подарочная упаковка (+500)
+          </label>
+
+          <label class="inline-label">
+            <input type="checkbox" class="option" value="Срочная сборка" data-price="1000" />
+            Срочная сборка (+1000)
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" id="submitBtn">Оформить</button>
+          <button type="button" id="resetBtn">Очистить</button>
+        </div>
+
+        <p id="errorMessage" class="message error"></p>
+        <p id="successMessage" class="message success"></p>
+      </form>
+
+      <div class="preview" id="previewCard">
+        <h2>Предпросмотр заказа</h2>
+
+        <p><strong>Имя:</strong> <span id="previewName">—</span></p>
+        <p><strong>Комментарий:</strong> <span id="previewComment">—</span></p>
+        <p><strong>Категория:</strong> <span id="previewCategory">Ноутбук</span></p>
+        <p><strong>Количество:</strong> <span id="previewQuantity">1</span></p>
+        <p><strong>Доставка:</strong> <span id="previewDelivery">Курьер</span></p>
+        <p><strong>Опции:</strong> <span id="previewOptions">Нет</span></p>
+        <p><strong>Итоговая стоимость:</strong> <span id="previewTotal">50000 ₽</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
